@@ -1,0 +1,6 @@
+framework module Pods_RoboBlocker {
+  umbrella header "Pods-RoboBlocker-umbrella.h"
+
+  export *
+  module * { export * }
+}
