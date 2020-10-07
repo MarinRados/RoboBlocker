@@ -4,6 +4,7 @@ use_frameworks!
 
 def shared_pods
     pod 'SwiftLint'
+    pod 'lottie-ios'
 end
 
 target 'RoboBlocker' do
