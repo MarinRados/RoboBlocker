@@ -11,7 +11,7 @@ import UIKit
 
 enum Font: String {
     
-    case notoSansRegular = "NotoSans-Regular"
+    case notoSansRegular = "NotoSans"
     case notoSansBold = "NotoSans-Bold"
     
     var name: String {
