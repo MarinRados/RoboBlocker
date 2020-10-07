@@ -27,8 +27,13 @@ enum UILabelStyle {
         label.textColor = .dark
     }
     
+    static let regular20Dark = base.composing { label in
+        label.font = Font.regular(size: 20)
+        label.textColor = .dark
+    }
+    
     static let regularText = base.composing { label in
-        label.font = Font.regular(size: 14)
+        label.font = Font.regular(size: 17)
         label.textColor = .dark
     }
 }

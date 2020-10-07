@@ -36,3 +36,17 @@ extension UIViewController: RootShowable {
         return appWindow
     }
 }
+
+extension UIViewController {
+    
+    public func showAlert(title: String, message: String? = nil, actions: [UIAlertAction]) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        for action in actions {
+            alert.addAction(action)
+        }
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+}
