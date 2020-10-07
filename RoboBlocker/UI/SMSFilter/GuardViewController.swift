@@ -9,11 +9,180 @@
 import UIKit
 
 final class GuardViewController: UIViewController {
-
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        setupConstraints()
+        addDoneButton()
+    }
+    
+    // MARK: - Constraints
+    
+    private func setupConstraints() {
+        blockAllSwitch.anchor(trailing: (view.trailingAnchor, 24))
+        allowOnlyContactsLabel.anchor(top: (view.safeAreaLayoutGuide.topAnchor, 30), leading: (view.leadingAnchor, 24), trailing: (blockAllSwitch.leadingAnchor, 24))
+        blockAllSwitch.centerYAnchor.constraint(equalTo: allowOnlyContactsLabel.centerYAnchor).isActive = true
+        blockListTitleLabel.anchor(top: (allowOnlyContactsLabel.bottomAnchor, 16), leading: (view.leadingAnchor, 24))
+        addButton.anchor(trailing: (view.trailingAnchor, 20), size: CGSize(width: 40, height: 40))
+        textField.anchor(top: (blockListTitleLabel.bottomAnchor, 16), leading: (view.leadingAnchor, 24), trailing: (addButton.leadingAnchor, 12), size: CGSize(width: 0, height: 40))
+        addButton.centerYAnchor.constraint(equalTo: textField.centerYAnchor).isActive = true
+        tableView.anchor(top: (textField.bottomAnchor, 20), bottom: (view.safeAreaLayoutGuide.bottomAnchor, 0), leading: (view.leadingAnchor, 0), trailing: (view.trailingAnchor, 0))
+        topSeparator.anchor(bottom: (tableView.topAnchor, 0), leading: (view.leadingAnchor, 0), trailing: (view.trailingAnchor, 0), size: CGSize(width: 0, height: 0.5))
+    }
+    
+    // MARK: - User Interaction
+    
+    @objc private func switchValueDidChange(_ sender: UISwitch) {
+        if sender.isOn {
+            // future logic here
+        } else {
+            // future logic here
+        }
+    }
+    
+    @objc private func addTapped() {
+        guard let input = textField.text else {
+            showAlert(title: "Please enter the word you wish to add to your filters", message: nil, actions: [UIAlertAction(title: "OK", style: .default, handler: nil)])
+            return
+        }
+        if input.isEmptyOrWhitespace {
+            showAlert(title: "Please enter the word you wish to add to your filters", message: nil, actions: [UIAlertAction(title: "OK", style: .default, handler: nil)])
+            return
+        }
+        // future logic here
+    }
+    
+    // MARK: - UI Components
+    
+    private lazy var allowOnlyContactsLabel: UILabel = {
+        let allowOnlyContactsLabel = UILabel()
+        allowOnlyContactsLabel.numberOfLines = 0
+        UILabelStyle.regularText.apply(to: allowOnlyContactsLabel)
+        allowOnlyContactsLabel.text = "Turn on SMS filter protection"
+        view.addSubview(allowOnlyContactsLabel)
+        return allowOnlyContactsLabel
+    }()
+    
+    private lazy var blockAllSwitch: UISwitch = {
+        let blockAllSwitch = UISwitch()
+        blockAllSwitch.onTintColor = .main
+        blockAllSwitch.backgroundColor = .white
+        blockAllSwitch.setOn(false, animated: false)
+        blockAllSwitch.addTarget(self, action: #selector(switchValueDidChange), for: .valueChanged)
+        view.addSubview(blockAllSwitch)
+        return blockAllSwitch
+    }()
+    
+    private lazy var blockListTitleLabel: UILabel = {
+        let blockListTitleLabel = UILabel()
+        UILabelStyle.bold32Main.apply(to: blockListTitleLabel)
+        blockListTitleLabel.text = "Filter Words"
+        view.addSubview(blockListTitleLabel)
+        return blockListTitleLabel
+    }()
+    
+    private lazy var addButton: UIButton = {
+        let addButton = UIButton()
+        addButton.tintColor = .main
+        addButton.setImage(#imageLiteral(resourceName: "add").withRenderingMode(.alwaysTemplate), for: .normal)
+        addButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
+        view.addSubview(addButton)
+        return addButton
+    }()
+    
+    lazy var textField: UITextField = {
+        let textField = UITextField()
+        textField.delegate = self
+        textField.contentVerticalAlignment = .center
+        textField.textColor = UIColor.dark
+        textField.font = Font.regular(size: 17)
+        textField.autocapitalizationType = UITextAutocapitalizationType.none
+        textField.layer.borderWidth = 2
+        textField.layer.borderColor = UIColor.grayText.cgColor
+        textField.layer.cornerRadius = 4
+        textField.placeholder = "Enter filter word"
+        
+        let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: 40))
+        leftView.backgroundColor = .clear
+        textField.leftView = leftView
+        textField.leftViewMode = .always
+        textField.backgroundColor = .white
+        
+        textField.keyboardType = .numberPad
+        view.addSubview(textField)
+        return textField
+    }()
+    
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = .clear
+        tableView.register(BlockedNumberTableViewCell.self, forCellReuseIdentifier: "BlockedNumberTableViewCell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorStyle = .singleLine
+        tableView.separatorColor = .grayText
+        tableView.separatorInset = UIEdgeInsets.zero
+        tableView.tableFooterView = UIView()
+        tableView.keyboardDismissMode = .onDrag
+        view.addSubview(tableView)
+        return tableView
+    }()
+    
+    private lazy var topSeparator: UIView = {
+        let topSeparator = UIView()
+        topSeparator.backgroundColor = .grayText
+        view.addSubview(topSeparator)
+        return topSeparator
+    }()
+    
+    // MARK: - Utility
+    
+    private func addDoneButton() {
+        let toolBar: UIToolbar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.items = [UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil),
+                         UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(donePressed))]
+        toolBar.sizeToFit()
+        textField.inputAccessoryView = toolBar
+    }
+    
+    @objc private func donePressed() {
+        textField.resignFirstResponder()
+    }
+}
+
+extension GuardViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BlockedNumberTableViewCell", for: indexPath) as? BlockedNumberTableViewCell else { return UITableViewCell() }
+        cell.phoneNumber = "word"
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 56
+    }
+}
+
+extension GuardViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.main.cgColor
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.grayText.cgColor
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
+        return true
     }
 }
