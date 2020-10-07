@@ -16,7 +16,7 @@ extension UIColor {
     }
     
     static let main = rgb(114, 137, 218)
-    static let gray = rgb(153, 170, 181)
+    static let grayText = rgb(153, 170, 181)
     static let dark = rgb(44, 47, 51)
     static let text = rgb(35, 39, 42)
 }
