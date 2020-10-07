@@ -14,6 +14,14 @@
 		6BA6403D252B16BC001515F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BA6403C252B16BC001515F9 /* Assets.xcassets */; };
 		6BA64040252B16BC001515F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BA6403E252B16BC001515F9 /* LaunchScreen.storyboard */; };
 		6BA6404B252B16BC001515F9 /* RoboBlockerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6404A252B16BC001515F9 /* RoboBlockerTests.swift */; };
+		6BA6405F252DB5A7001515F9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6405E252DB5A7001515F9 /* Coordinator.swift */; };
+		6BA64061252DB5E3001515F9 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA64060252DB5E3001515F9 /* UIView+Extensions.swift */; };
+		6BA64064252DB673001515F9 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA64063252DB673001515F9 /* String+Extensions.swift */; };
+		6BA64066252DB6D4001515F9 /* UIView+Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA64065252DB6D4001515F9 /* UIView+Styling.swift */; };
+		6BA64068252DB72E001515F9 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA64067252DB72E001515F9 /* Colors.swift */; };
+		6BA6406C252DB894001515F9 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6406B252DB894001515F9 /* Fonts.swift */; };
+		6BA64073252DBA06001515F9 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BA6406F252DBA06001515F9 /* NotoSans-Bold.ttf */; };
+		6BA64074252DBA06001515F9 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BA64070252DBA06001515F9 /* NotoSans-Regular.ttf */; };
 		827112DD0038D544813EB732 /* Pods_RoboBlockerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83977D1407073A230D850DD5 /* Pods_RoboBlockerTests.framework */; };
 		F1436276CF5251A73761D8BC /* Pods_RoboBlocker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25FE38FAA48B6CB6BE00ECFD /* Pods_RoboBlocker.framework */; };
 /* End PBXBuildFile section */
@@ -37,10 +45,18 @@
 		6BA6403A252B16BB001515F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6BA6403C252B16BC001515F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BA6403F252B16BC001515F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		6BA64041252B16BC001515F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BA64041252B16BC001515F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = RoboBlocker/App/Info.plist; sourceTree = SOURCE_ROOT; };
 		6BA64046252B16BC001515F9 /* RoboBlockerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoboBlockerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BA6404A252B16BC001515F9 /* RoboBlockerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoboBlockerTests.swift; sourceTree = "<group>"; };
 		6BA6404C252B16BC001515F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BA6405E252DB5A7001515F9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		6BA64060252DB5E3001515F9 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		6BA64063252DB673001515F9 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		6BA64065252DB6D4001515F9 /* UIView+Styling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Styling.swift"; sourceTree = "<group>"; };
+		6BA64067252DB72E001515F9 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		6BA6406B252DB894001515F9 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		6BA6406F252DBA06001515F9 /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
+		6BA64070252DBA06001515F9 /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
 		6FF41DE86B564BC79834F180 /* Pods-RoboBlockerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoboBlockerTests.release.xcconfig"; path = "Target Support Files/Pods-RoboBlockerTests/Pods-RoboBlockerTests.release.xcconfig"; sourceTree = "<group>"; };
 		83977D1407073A230D850DD5 /* Pods_RoboBlockerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoboBlockerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4A2DFFB9DAAE1E0E6742D4A /* Pods-RoboBlocker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoboBlocker.release.xcconfig"; path = "Target Support Files/Pods-RoboBlocker/Pods-RoboBlocker.release.xcconfig"; sourceTree = "<group>"; };
@@ -91,13 +107,10 @@
 		6BA64032252B16BB001515F9 /* RoboBlocker */ = {
 			isa = PBXGroup;
 			children = (
-				6BA64033252B16BB001515F9 /* AppDelegate.swift */,
-				6BA64035252B16BB001515F9 /* SceneDelegate.swift */,
-				6BA64037252B16BB001515F9 /* ViewController.swift */,
-				6BA64039252B16BB001515F9 /* Main.storyboard */,
-				6BA6403C252B16BC001515F9 /* Assets.xcassets */,
-				6BA6403E252B16BC001515F9 /* LaunchScreen.storyboard */,
-				6BA64041252B16BC001515F9 /* Info.plist */,
+				6BA64056252DB387001515F9 /* App */,
+				6BA64057252DB3A3001515F9 /* UI */,
+				6BA64058252DB3D6001515F9 /* Extensions */,
+				6BA64059252DB3E2001515F9 /* Resources */,
 			);
 			path = RoboBlocker;
 			sourceTree = "<group>";
@@ -109,6 +122,97 @@
 				6BA6404C252B16BC001515F9 /* Info.plist */,
 			);
 			path = RoboBlockerTests;
+			sourceTree = "<group>";
+		};
+		6BA64056252DB387001515F9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6BA64033252B16BB001515F9 /* AppDelegate.swift */,
+				6BA64035252B16BB001515F9 /* SceneDelegate.swift */,
+				6BA64041252B16BC001515F9 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		6BA64057252DB3A3001515F9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6BA6405D252DB59B001515F9 /* Common */,
+				6BA6405A252DB514001515F9 /* Info */,
+				6BA6405B252DB525001515F9 /* BlockList */,
+				6BA6405C252DB52F001515F9 /* SMSFilter */,
+				6BA6403E252B16BC001515F9 /* LaunchScreen.storyboard */,
+				6BA64037252B16BB001515F9 /* ViewController.swift */,
+				6BA64039252B16BB001515F9 /* Main.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		6BA64058252DB3D6001515F9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6BA64060252DB5E3001515F9 /* UIView+Extensions.swift */,
+				6BA64063252DB673001515F9 /* String+Extensions.swift */,
+				6BA64065252DB6D4001515F9 /* UIView+Styling.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6BA64059252DB3E2001515F9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6BA64069252DB872001515F9 /* Font */,
+				6BA6403C252B16BC001515F9 /* Assets.xcassets */,
+				6BA64067252DB72E001515F9 /* Colors.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6BA6405A252DB514001515F9 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		6BA6405B252DB525001515F9 /* BlockList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BlockList;
+			sourceTree = "<group>";
+		};
+		6BA6405C252DB52F001515F9 /* SMSFilter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SMSFilter;
+			sourceTree = "<group>";
+		};
+		6BA6405D252DB59B001515F9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				6BA6405E252DB5A7001515F9 /* Coordinator.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		6BA64069252DB872001515F9 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				6BA6406A252DB87E001515F9 /* FontFiles */,
+				6BA6406B252DB894001515F9 /* Fonts.swift */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		6BA6406A252DB87E001515F9 /* FontFiles */ = {
+			isa = PBXGroup;
+			children = (
+				6BA6406F252DBA06001515F9 /* NotoSans-Bold.ttf */,
+				6BA64070252DBA06001515F9 /* NotoSans-Regular.ttf */,
+			);
+			path = FontFiles;
 			sourceTree = "<group>";
 		};
 		7BD8EF9DBA5DCE1A9A20BBC2 /* Pods */ = {
@@ -215,9 +319,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BA64073252DBA06001515F9 /* NotoSans-Bold.ttf in Resources */,
 				6BA64040252B16BC001515F9 /* LaunchScreen.storyboard in Resources */,
 				6BA6403D252B16BC001515F9 /* Assets.xcassets in Resources */,
 				6BA6403B252B16BB001515F9 /* Main.storyboard in Resources */,
+				6BA64074252DBA06001515F9 /* NotoSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,8 +406,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BA6405F252DB5A7001515F9 /* Coordinator.swift in Sources */,
+				6BA64068252DB72E001515F9 /* Colors.swift in Sources */,
 				6BA64038252B16BB001515F9 /* ViewController.swift in Sources */,
+				6BA64061252DB5E3001515F9 /* UIView+Extensions.swift in Sources */,
+				6BA64066252DB6D4001515F9 /* UIView+Styling.swift in Sources */,
 				6BA64034252B16BB001515F9 /* AppDelegate.swift in Sources */,
+				6BA64064252DB673001515F9 /* String+Extensions.swift in Sources */,
+				6BA6406C252DB894001515F9 /* Fonts.swift in Sources */,
 				6BA64036252B16BB001515F9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,7 +577,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N53N9LX9DH;
-				INFOPLIST_FILE = RoboBlocker/Info.plist;
+				INFOPLIST_FILE = RoboBlocker/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -484,7 +596,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N53N9LX9DH;
-				INFOPLIST_FILE = RoboBlocker/Info.plist;
+				INFOPLIST_FILE = RoboBlocker/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
