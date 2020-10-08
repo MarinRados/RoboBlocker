@@ -69,7 +69,7 @@ final class InfoViewController: UIViewController {
         let blockedSMSTitleLabel = UILabel()
         blockedSMSTitleLabel.numberOfLines = 0
         UILabelStyle.bold24Dark.apply(to: blockedSMSTitleLabel)
-        blockedSMSTitleLabel.text = "Blocked messages"
+        blockedSMSTitleLabel.text = "Messages filtered"
         view.addSubview(blockedSMSTitleLabel)
         return blockedSMSTitleLabel
     }()

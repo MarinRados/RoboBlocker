@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,6 +31,10 @@
 		6BA64086252DCCA1001515F9 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA64085252DCCA1001515F9 /* UIViewController+Extensions.swift */; };
 		6BA6408A252DD59F001515F9 /* LabelStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA64089252DD59E001515F9 /* LabelStyles.swift */; };
 		6BA6408D252DE71B001515F9 /* BlockedNumberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6408C252DE71B001515F9 /* BlockedNumberTableViewCell.swift */; };
+		6BA6409E252F0FD3001515F9 /* CallDirectoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6409D252F0FD3001515F9 /* CallDirectoryHandler.swift */; };
+		6BA640A2252F0FD3001515F9 /* CallDirectoryHandler.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6BA6409B252F0FD3001515F9 /* CallDirectoryHandler.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6BA640AE252F4326001515F9 /* MessageFilterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA640AD252F4326001515F9 /* MessageFilterExtension.swift */; };
+		6BA640B2252F4326001515F9 /* MessageFilterExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6BA640AB252F4326001515F9 /* MessageFilterExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		827112DD0038D544813EB732 /* Pods_RoboBlockerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83977D1407073A230D850DD5 /* Pods_RoboBlockerTests.framework */; };
 		F1436276CF5251A73761D8BC /* Pods_RoboBlocker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25FE38FAA48B6CB6BE00ECFD /* Pods_RoboBlocker.framework */; };
 /* End PBXBuildFile section */
@@ -43,7 +47,36 @@
 			remoteGlobalIDString = 6BA6402F252B16BB001515F9;
 			remoteInfo = RoboBlocker;
 		};
+		6BA640A0252F0FD3001515F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6BA64028252B16BB001515F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6BA6409A252F0FD3001515F9;
+			remoteInfo = CallDirectoryHandler;
+		};
+		6BA640B0252F4326001515F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6BA64028252B16BB001515F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6BA640AA252F4326001515F9;
+			remoteInfo = MessageFilterExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6BA640A3252F0FD3001515F9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6BA640B2252F4326001515F9 /* MessageFilterExtension.appex in Embed App Extensions */,
+				6BA640A2252F0FD3001515F9 /* CallDirectoryHandler.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		25FE38FAA48B6CB6BE00ECFD /* Pods_RoboBlocker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoboBlocker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +108,12 @@
 		6BA64085252DCCA1001515F9 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		6BA64089252DD59E001515F9 /* LabelStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStyles.swift; sourceTree = "<group>"; };
 		6BA6408C252DE71B001515F9 /* BlockedNumberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedNumberTableViewCell.swift; sourceTree = "<group>"; };
+		6BA6409B252F0FD3001515F9 /* CallDirectoryHandler.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CallDirectoryHandler.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BA6409D252F0FD3001515F9 /* CallDirectoryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDirectoryHandler.swift; sourceTree = "<group>"; };
+		6BA6409F252F0FD3001515F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BA640AB252F4326001515F9 /* MessageFilterExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessageFilterExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BA640AD252F4326001515F9 /* MessageFilterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFilterExtension.swift; sourceTree = "<group>"; };
+		6BA640AF252F4326001515F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FF41DE86B564BC79834F180 /* Pods-RoboBlockerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoboBlockerTests.release.xcconfig"; path = "Target Support Files/Pods-RoboBlockerTests/Pods-RoboBlockerTests.release.xcconfig"; sourceTree = "<group>"; };
 		83977D1407073A230D850DD5 /* Pods_RoboBlockerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoboBlockerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4A2DFFB9DAAE1E0E6742D4A /* Pods-RoboBlocker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoboBlocker.release.xcconfig"; path = "Target Support Files/Pods-RoboBlocker/Pods-RoboBlocker.release.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +138,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6BA64098252F0FD3001515F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BA640A8252F4326001515F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -107,6 +160,8 @@
 			children = (
 				6BA64032252B16BB001515F9 /* RoboBlocker */,
 				6BA64049252B16BC001515F9 /* RoboBlockerTests */,
+				6BA6409C252F0FD3001515F9 /* CallDirectoryHandler */,
+				6BA640AC252F4326001515F9 /* MessageFilterExtension */,
 				6BA64031252B16BB001515F9 /* Products */,
 				7BD8EF9DBA5DCE1A9A20BBC2 /* Pods */,
 				EB4BB8570C14DEE90198E1CF /* Frameworks */,
@@ -118,6 +173,8 @@
 			children = (
 				6BA64030252B16BB001515F9 /* RoboBlocker.app */,
 				6BA64046252B16BC001515F9 /* RoboBlockerTests.xctest */,
+				6BA6409B252F0FD3001515F9 /* CallDirectoryHandler.appex */,
+				6BA640AB252F4326001515F9 /* MessageFilterExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -258,6 +315,24 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		6BA6409C252F0FD3001515F9 /* CallDirectoryHandler */ = {
+			isa = PBXGroup;
+			children = (
+				6BA6409D252F0FD3001515F9 /* CallDirectoryHandler.swift */,
+				6BA6409F252F0FD3001515F9 /* Info.plist */,
+			);
+			path = CallDirectoryHandler;
+			sourceTree = "<group>";
+		};
+		6BA640AC252F4326001515F9 /* MessageFilterExtension */ = {
+			isa = PBXGroup;
+			children = (
+				6BA640AD252F4326001515F9 /* MessageFilterExtension.swift */,
+				6BA640AF252F4326001515F9 /* Info.plist */,
+			);
+			path = MessageFilterExtension;
+			sourceTree = "<group>";
+		};
 		7BD8EF9DBA5DCE1A9A20BBC2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,10 +366,13 @@
 				6BA6402E252B16BB001515F9 /* Resources */,
 				6BA64055252B19E2001515F9 /* SwiftLint */,
 				47FA411D40EFC0AC7C8B65D5 /* [CP] Embed Pods Frameworks */,
+				6BA640A3252F0FD3001515F9 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6BA640A1252F0FD3001515F9 /* PBXTargetDependency */,
+				6BA640B1252F4326001515F9 /* PBXTargetDependency */,
 			);
 			name = RoboBlocker;
 			productName = RoboBlocker;
@@ -321,6 +399,40 @@
 			productReference = 6BA64046252B16BC001515F9 /* RoboBlockerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		6BA6409A252F0FD3001515F9 /* CallDirectoryHandler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6BA640A6252F0FD3001515F9 /* Build configuration list for PBXNativeTarget "CallDirectoryHandler" */;
+			buildPhases = (
+				6BA64097252F0FD3001515F9 /* Sources */,
+				6BA64098252F0FD3001515F9 /* Frameworks */,
+				6BA64099252F0FD3001515F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CallDirectoryHandler;
+			productName = CallDirectoryHandler;
+			productReference = 6BA6409B252F0FD3001515F9 /* CallDirectoryHandler.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		6BA640AA252F4326001515F9 /* MessageFilterExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6BA640B5252F4326001515F9 /* Build configuration list for PBXNativeTarget "MessageFilterExtension" */;
+			buildPhases = (
+				6BA640A7252F4326001515F9 /* Sources */,
+				6BA640A8252F4326001515F9 /* Frameworks */,
+				6BA640A9252F4326001515F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MessageFilterExtension;
+			productName = MessageFilterExtension;
+			productReference = 6BA640AB252F4326001515F9 /* MessageFilterExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -337,6 +449,12 @@
 					6BA64045252B16BC001515F9 = {
 						CreatedOnToolsVersion = 11.7;
 						TestTargetID = 6BA6402F252B16BB001515F9;
+					};
+					6BA6409A252F0FD3001515F9 = {
+						CreatedOnToolsVersion = 11.7;
+					};
+					6BA640AA252F4326001515F9 = {
+						CreatedOnToolsVersion = 11.7;
 					};
 				};
 			};
@@ -355,6 +473,8 @@
 			targets = (
 				6BA6402F252B16BB001515F9 /* RoboBlocker */,
 				6BA64045252B16BC001515F9 /* RoboBlockerTests */,
+				6BA6409A252F0FD3001515F9 /* CallDirectoryHandler */,
+				6BA640AA252F4326001515F9 /* MessageFilterExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -372,6 +492,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6BA64044252B16BC001515F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BA64099252F0FD3001515F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BA640A9252F4326001515F9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -514,6 +648,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6BA64097252F0FD3001515F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BA6409E252F0FD3001515F9 /* CallDirectoryHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BA640A7252F4326001515F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BA640AE252F4326001515F9 /* MessageFilterExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -521,6 +671,16 @@
 			isa = PBXTargetDependency;
 			target = 6BA6402F252B16BB001515F9 /* RoboBlocker */;
 			targetProxy = 6BA64047252B16BC001515F9 /* PBXContainerItemProxy */;
+		};
+		6BA640A1252F0FD3001515F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6BA6409A252F0FD3001515F9 /* CallDirectoryHandler */;
+			targetProxy = 6BA640A0252F0FD3001515F9 /* PBXContainerItemProxy */;
+		};
+		6BA640B1252F4326001515F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6BA640AA252F4326001515F9 /* MessageFilterExtension */;
+			targetProxy = 6BA640B0252F4326001515F9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -654,6 +814,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D1A5A17B036B50B87585ABBF /* Pods-RoboBlocker.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N53N9LX9DH;
@@ -674,6 +835,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A4A2DFFB9DAAE1E0E6742D4A /* Pods-RoboBlocker.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N53N9LX9DH;
@@ -736,6 +898,86 @@
 			};
 			name = Release;
 		};
+		6BA640A4252F0FD3001515F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N53N9LX9DH;
+				INFOPLIST_FILE = CallDirectoryHandler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = marinrados.RoboBlocker.CallDirectoryHandler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		6BA640A5252F0FD3001515F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N53N9LX9DH;
+				INFOPLIST_FILE = CallDirectoryHandler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = marinrados.RoboBlocker.CallDirectoryHandler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		6BA640B3252F4326001515F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N53N9LX9DH;
+				INFOPLIST_FILE = MessageFilterExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = marinrados.RoboBlocker.MessageFilterExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6BA640B4252F4326001515F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N53N9LX9DH;
+				INFOPLIST_FILE = MessageFilterExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = marinrados.RoboBlocker.MessageFilterExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -762,6 +1004,24 @@
 			buildConfigurations = (
 				6BA64053252B16BC001515F9 /* Debug */,
 				6BA64054252B16BC001515F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6BA640A6252F0FD3001515F9 /* Build configuration list for PBXNativeTarget "CallDirectoryHandler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BA640A4252F0FD3001515F9 /* Debug */,
+				6BA640A5252F0FD3001515F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6BA640B5252F4326001515F9 /* Build configuration list for PBXNativeTarget "MessageFilterExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BA640B3252F4326001515F9 /* Debug */,
+				6BA640B4252F4326001515F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
