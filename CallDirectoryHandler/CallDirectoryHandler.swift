@@ -18,16 +18,8 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // and identification entries which have been added or removed since the last time this extension's data was loaded.
         // But the extension must still be prepared to provide the full set of data at any time, so add all blocking
         // and identification phone numbers if the request is not incremental.
-        if context.isIncremental {
-            addOrRemoveIncrementalBlockingPhoneNumbers(to: context)
-
-            addOrRemoveIncrementalIdentificationPhoneNumbers(to: context)
-        } else {
-            addAllBlockingPhoneNumbers(to: context)
-
-            addAllIdentificationPhoneNumbers(to: context)
-        }
-
+        addAllBlockingPhoneNumbers(to: context)
+        addAllIdentificationPhoneNumbers(to: context)
         context.completeRequest()
     }
 
@@ -36,7 +28,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
         //
         // Numbers must be provided in numerically ascending order.
-        let allPhoneNumbers: [CXCallDirectoryPhoneNumber] = [1_253_950_1212]
+        let allPhoneNumbers: [CXCallDirectoryPhoneNumber] = [38598223154]//[1_253_950_1212]
         for phoneNumber in allPhoneNumbers {
             context.addBlockingEntry(withNextSequentialPhoneNumber: phoneNumber)
         }
@@ -64,6 +56,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         //
         // Numbers must be provided in numerically ascending order.
         let allPhoneNumbers: [CXCallDirectoryPhoneNumber] = [1_425_950_1212]
+        //let allPhoneNumbers: [CXCallDirectoryPhoneNumber] = [38598223154]
         let labels = ["Suspicious Call"]
 
         for (phoneNumber, label) in zip(allPhoneNumbers, labels) {

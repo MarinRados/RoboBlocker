@@ -49,7 +49,7 @@ extension MessageFilterExtension: ILMessageFilterQueryHandling {
     private func offlineAction(for queryRequest: ILMessageFilterQueryRequest) -> ILMessageFilterAction {
         
         guard let messageBody = queryRequest.messageBody?.lowercased() else { return .none}
-        let filterWords = ["now for free"]
+        let filterWords = ["free"]
         
         for word in filterWords {
             if messageBody.contains(word) {

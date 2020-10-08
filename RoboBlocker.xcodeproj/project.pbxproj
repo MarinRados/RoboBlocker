@@ -35,6 +35,8 @@
 		6BA640A2252F0FD3001515F9 /* CallDirectoryHandler.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6BA6409B252F0FD3001515F9 /* CallDirectoryHandler.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6BA640AE252F4326001515F9 /* MessageFilterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA640AD252F4326001515F9 /* MessageFilterExtension.swift */; };
 		6BA640B2252F4326001515F9 /* MessageFilterExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6BA640AB252F4326001515F9 /* MessageFilterExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6BA640B8252F4E06001515F9 /* PersistenceServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA640B7252F4E06001515F9 /* PersistenceServiceProtocol.swift */; };
+		6BA640BA252F4E52001515F9 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA640B9252F4E52001515F9 /* PersistenceService.swift */; };
 		827112DD0038D544813EB732 /* Pods_RoboBlockerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83977D1407073A230D850DD5 /* Pods_RoboBlockerTests.framework */; };
 		F1436276CF5251A73761D8BC /* Pods_RoboBlocker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25FE38FAA48B6CB6BE00ECFD /* Pods_RoboBlocker.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +82,9 @@
 
 /* Begin PBXFileReference section */
 		25FE38FAA48B6CB6BE00ECFD /* Pods_RoboBlocker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoboBlocker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B2CB80F252F7FF7009533E8 /* RoboBlocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RoboBlocker.entitlements; sourceTree = "<group>"; };
+		6B2CB810252F8025009533E8 /* CallDirectoryHandler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CallDirectoryHandler.entitlements; sourceTree = "<group>"; };
+		6B2CB811252F804C009533E8 /* MessageFilterExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MessageFilterExtension.entitlements; sourceTree = "<group>"; };
 		6BA64030252B16BB001515F9 /* RoboBlocker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoboBlocker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BA64033252B16BB001515F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BA64035252B16BB001515F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +119,8 @@
 		6BA640AB252F4326001515F9 /* MessageFilterExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessageFilterExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BA640AD252F4326001515F9 /* MessageFilterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFilterExtension.swift; sourceTree = "<group>"; };
 		6BA640AF252F4326001515F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BA640B7252F4E06001515F9 /* PersistenceServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceServiceProtocol.swift; sourceTree = "<group>"; };
+		6BA640B9252F4E52001515F9 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		6FF41DE86B564BC79834F180 /* Pods-RoboBlockerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoboBlockerTests.release.xcconfig"; path = "Target Support Files/Pods-RoboBlockerTests/Pods-RoboBlockerTests.release.xcconfig"; sourceTree = "<group>"; };
 		83977D1407073A230D850DD5 /* Pods_RoboBlockerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoboBlockerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4A2DFFB9DAAE1E0E6742D4A /* Pods-RoboBlocker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoboBlocker.release.xcconfig"; path = "Target Support Files/Pods-RoboBlocker/Pods-RoboBlocker.release.xcconfig"; sourceTree = "<group>"; };
@@ -182,7 +189,9 @@
 		6BA64032252B16BB001515F9 /* RoboBlocker */ = {
 			isa = PBXGroup;
 			children = (
+				6B2CB80F252F7FF7009533E8 /* RoboBlocker.entitlements */,
 				6BA64056252DB387001515F9 /* App */,
+				6BA640B6252F4D9C001515F9 /* Services */,
 				6BA64057252DB3A3001515F9 /* UI */,
 				6BA64058252DB3D6001515F9 /* Extensions */,
 				6BA64059252DB3E2001515F9 /* Resources */,
@@ -318,6 +327,7 @@
 		6BA6409C252F0FD3001515F9 /* CallDirectoryHandler */ = {
 			isa = PBXGroup;
 			children = (
+				6B2CB810252F8025009533E8 /* CallDirectoryHandler.entitlements */,
 				6BA6409D252F0FD3001515F9 /* CallDirectoryHandler.swift */,
 				6BA6409F252F0FD3001515F9 /* Info.plist */,
 			);
@@ -327,10 +337,20 @@
 		6BA640AC252F4326001515F9 /* MessageFilterExtension */ = {
 			isa = PBXGroup;
 			children = (
+				6B2CB811252F804C009533E8 /* MessageFilterExtension.entitlements */,
 				6BA640AD252F4326001515F9 /* MessageFilterExtension.swift */,
 				6BA640AF252F4326001515F9 /* Info.plist */,
 			);
 			path = MessageFilterExtension;
+			sourceTree = "<group>";
+		};
+		6BA640B6252F4D9C001515F9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6BA640B7252F4E06001515F9 /* PersistenceServiceProtocol.swift */,
+				6BA640B9252F4E52001515F9 /* PersistenceService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		7BD8EF9DBA5DCE1A9A20BBC2 /* Pods */ = {
@@ -624,6 +644,8 @@
 				6BA64078252DC931001515F9 /* InfoViewController.swift in Sources */,
 				6BA64068252DB72E001515F9 /* Colors.swift in Sources */,
 				6BA6408D252DE71B001515F9 /* BlockedNumberTableViewCell.swift in Sources */,
+				6BA640B8252F4E06001515F9 /* PersistenceServiceProtocol.swift in Sources */,
+				6BA640BA252F4E52001515F9 /* PersistenceService.swift in Sources */,
 				6BA64086252DCCA1001515F9 /* UIViewController+Extensions.swift in Sources */,
 				6BA64061252DB5E3001515F9 /* UIView+Extensions.swift in Sources */,
 				6BA64066252DB6D4001515F9 /* UIView+Styling.swift in Sources */,
@@ -816,6 +838,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RoboBlocker/RoboBlocker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N53N9LX9DH;
 				INFOPLIST_FILE = RoboBlocker/App/Info.plist;
@@ -837,6 +860,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RoboBlocker/RoboBlocker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N53N9LX9DH;
 				INFOPLIST_FILE = RoboBlocker/App/Info.plist;
@@ -902,6 +926,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_ENTITLEMENTS = CallDirectoryHandler/CallDirectoryHandler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N53N9LX9DH;
 				INFOPLIST_FILE = CallDirectoryHandler/Info.plist;
@@ -923,6 +948,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_ENTITLEMENTS = CallDirectoryHandler/CallDirectoryHandler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N53N9LX9DH;
 				INFOPLIST_FILE = CallDirectoryHandler/Info.plist;
@@ -943,6 +969,7 @@
 		6BA640B3252F4326001515F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = MessageFilterExtension/MessageFilterExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N53N9LX9DH;
 				INFOPLIST_FILE = MessageFilterExtension/Info.plist;
@@ -962,6 +989,7 @@
 		6BA640B4252F4326001515F9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = MessageFilterExtension/MessageFilterExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N53N9LX9DH;
 				INFOPLIST_FILE = MessageFilterExtension/Info.plist;
