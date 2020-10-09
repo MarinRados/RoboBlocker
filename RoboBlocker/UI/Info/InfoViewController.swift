@@ -8,7 +8,6 @@
 
 import UIKit
 import CallKit
-import IdentityLookup
 
 final class InfoViewController: UIViewController {
 
@@ -19,6 +18,7 @@ final class InfoViewController: UIViewController {
         view.backgroundColor = .white
         setupConstraints()
         CXCallDirectoryManager.sharedInstance.reloadExtension(withIdentifier: "marinrados.RoboBlocker.CallDirectoryHandler", completionHandler: nil)
+        
     }
     
     // MARK: - Constraints
