@@ -55,7 +55,7 @@ final class GuardViewController: UIViewController {
             showAlert(title: "Please enter the word you wish to add to your filters", message: nil, actions: [UIAlertAction(title: "OK", style: .default, handler: nil)])
             return
         }
-        // future logic here
+        viewModel.addToFilter(word: input.lowercased())
     }
     
     // MARK: - UI Components
@@ -113,8 +113,6 @@ final class GuardViewController: UIViewController {
         textField.leftView = leftView
         textField.leftViewMode = .always
         textField.backgroundColor = .white
-        
-        textField.keyboardType = .numberPad
         view.addSubview(textField)
         return textField
     }()

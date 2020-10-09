@@ -24,7 +24,7 @@ extension UserDefaults {
     var blockList: [String] {
         get {
             guard let array = UserDefaults.group.array(forKey: Keys.blockList) as? [String] else {
-                return ["2539501212"]
+                return ["12539501212"]
             }
             return array
         }

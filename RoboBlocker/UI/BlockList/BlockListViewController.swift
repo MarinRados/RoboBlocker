@@ -104,7 +104,7 @@ final class BlockListViewController: UIViewController {
             showAlert(title: "Please enter the whole phone number", message: nil, actions: [UIAlertAction(title: "OK", style: .default, handler: nil)])
             return
         }
-        // future logic here
+        viewModel.addToBlockList(number: input)
     }
     
     // MARK: - UI Components
@@ -242,6 +242,6 @@ extension BlockListViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
         let newLength = text.count + string.count - range.length
-        return newLength <= 10
+        return newLength <= 12
     }
 }

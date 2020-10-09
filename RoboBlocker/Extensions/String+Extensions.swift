@@ -21,13 +21,11 @@ extension String {
         let characters = self.enumerated().map { value -> [Character] in
             if value.offset > 0 && value.offset % 3 == 0 && count < 2 {
                 count += 1
-                return ["-", value.element]
-                
+                return [" ", value.element]
             } else {
                 return [value.element]
             }
         }
-        
         return String(characters.joined())
     }
 }
