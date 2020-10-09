@@ -20,6 +20,10 @@ final class GuardViewController: UIViewController {
         setupConstraints()
         addDoneButton()
         guardSwitch.setOn(viewModel.getGuardStatus(), animated: false)
+        
+        viewModel.onChangedList = { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
     
     // MARK: - Constraints
@@ -118,7 +122,7 @@ final class GuardViewController: UIViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .clear
-        tableView.register(BlockedNumberTableViewCell.self, forCellReuseIdentifier: "BlockedNumberTableViewCell")
+        tableView.register(FilterWordTableViewCell.self, forCellReuseIdentifier: "FilterWordTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .singleLine
@@ -156,12 +160,12 @@ final class GuardViewController: UIViewController {
 extension GuardViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return viewModel.filteredWords.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BlockedNumberTableViewCell", for: indexPath) as? BlockedNumberTableViewCell else { return UITableViewCell() }
-        cell.phoneNumber = "word"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FilterWordTableViewCell", for: indexPath) as? FilterWordTableViewCell else { return UITableViewCell() }
+        cell.word = viewModel.filteredWords[indexPath.row]
         return cell
     }
     

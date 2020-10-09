@@ -23,6 +23,10 @@ final class BlockListViewController: UIViewController {
         addDoneButton()
         blockAllSwitch.setOn(viewModel.getContactListStatus(), animated: false)
         getContactListAuthorization()
+        
+        viewModel.onChangedList = { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
     
     // MARK: - Contacts
@@ -206,12 +210,12 @@ final class BlockListViewController: UIViewController {
 extension BlockListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return viewModel.blockList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "BlockedNumberTableViewCell", for: indexPath) as? BlockedNumberTableViewCell else { return UITableViewCell() }
-        cell.phoneNumber = "111-222-3333"
+        cell.phoneNumber = viewModel.blockList[indexPath.row]
         return cell
     }
     

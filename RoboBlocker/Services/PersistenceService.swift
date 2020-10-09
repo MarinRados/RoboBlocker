@@ -10,7 +10,6 @@ import Foundation
 
 final class PersistenceService: PersistenceServiceProtocol {
     
-    let userDefaults = UserDefaults.standard
     private let groupDefaults = UserDefaults.group
     
     // MARK: - User Options
@@ -73,12 +72,5 @@ final class PersistenceService: PersistenceServiceProtocol {
         var list = groupDefaults.filterWords
         list.removeAll { $0 == word }
         groupDefaults.filterWords = list
-    }
-    
-    // MARK: - Keys
-    
-    fileprivate enum Keys {
-        static let blockedNumbers = "blocked_numbers"
-        static let filterWords = "filter_words"
     }
 }

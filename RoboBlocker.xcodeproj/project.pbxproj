@@ -16,6 +16,7 @@
 		6B2CB8272530FDDE009533E8 /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CB8252530FDDE009533E8 /* InfoViewModel.swift */; };
 		6B2CB8282530FDDE009533E8 /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CB8252530FDDE009533E8 /* InfoViewModel.swift */; };
 		6B2CB82A2530FEFF009533E8 /* BlockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CB8292530FEFF009533E8 /* BlockListViewModel.swift */; };
+		6B2CB82C253117ED009533E8 /* FilterWordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CB82B253117ED009533E8 /* FilterWordTableViewCell.swift */; };
 		6BA64034252B16BB001515F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA64033252B16BB001515F9 /* AppDelegate.swift */; };
 		6BA64036252B16BB001515F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA64035252B16BB001515F9 /* SceneDelegate.swift */; };
 		6BA6403D252B16BC001515F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BA6403C252B16BC001515F9 /* Assets.xcassets */; };
@@ -99,6 +100,7 @@
 		6B2CB8212530FD47009533E8 /* GuardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardViewModel.swift; sourceTree = "<group>"; };
 		6B2CB8252530FDDE009533E8 /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
 		6B2CB8292530FEFF009533E8 /* BlockListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListViewModel.swift; sourceTree = "<group>"; };
+		6B2CB82B253117ED009533E8 /* FilterWordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterWordTableViewCell.swift; sourceTree = "<group>"; };
 		6BA64030252B16BB001515F9 /* RoboBlocker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoboBlocker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BA64033252B16BB001515F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BA64035252B16BB001515F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +178,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B2CB82D253117F4009533E8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6B2CB82B253117ED009533E8 /* FilterWordTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		6BA64027252B16BB001515F9 = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +301,7 @@
 		6BA6405C252DB52F001515F9 /* SMSFilter */ = {
 			isa = PBXGroup;
 			children = (
+				6B2CB82D253117F4009533E8 /* Cells */,
 				6BA6407B252DC95B001515F9 /* GuardViewController.swift */,
 				6B2CB8212530FD47009533E8 /* GuardViewModel.swift */,
 				6BA64081252DCB10001515F9 /* GuardCoordinator.swift */,
@@ -678,6 +689,7 @@
 				6B2CB81E2530FB2C009533E8 /* ServiceFactory.swift in Sources */,
 				6BA64080252DCAF4001515F9 /* BlockListCoordinator.swift in Sources */,
 				6BA64064252DB673001515F9 /* String+Extensions.swift in Sources */,
+				6B2CB82C253117ED009533E8 /* FilterWordTableViewCell.swift in Sources */,
 				6BA6407C252DC95B001515F9 /* GuardViewController.swift in Sources */,
 				6B2CB81A2530FAB5009533E8 /* SharedData.swift in Sources */,
 				6BA6406C252DB894001515F9 /* Fonts.swift in Sources */,

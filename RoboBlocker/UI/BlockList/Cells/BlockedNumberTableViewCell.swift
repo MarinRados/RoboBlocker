@@ -35,7 +35,7 @@ final class BlockedNumberTableViewCell: UITableViewCell {
     
     var phoneNumber: String = "" {
         didSet {
-            numberLabel.text = phoneNumber
+            numberLabel.text = phoneNumber.formattedAsPhoneNumber()
         }
     }
 }
