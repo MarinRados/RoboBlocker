@@ -18,12 +18,13 @@ extension UserDefaults {
         static let isGuardOn = "is_guard_on"
         static let contacts = "contacts"
         static let blockList = "block_list"
+        static let filterWords = "filter_words"
     }
     
     var blockList: [String] {
         get {
             guard let array = UserDefaults.group.array(forKey: Keys.blockList) as? [String] else {
-                return []
+                return ["2539501212"]
             }
             return array
         }
@@ -42,7 +43,18 @@ extension UserDefaults {
         }
         set {
             UserDefaults.group.setValue(newValue, forKeyPath: Keys.contacts)
-            CXCallDirectoryManager.sharedInstance.reloadExtension(withIdentifier: "marinrados.RoboBlocker.CallDirectoryHandler", completionHandler: nil)
+        }
+    }
+    
+    var filterWords: [String] {
+        get {
+            guard let array = UserDefaults.group.array(forKey: Keys.filterWords) as? [String] else {
+                return ["free", "won"]
+            }
+            return array
+        }
+        set {
+            UserDefaults.group.setValue(newValue, forKeyPath: Keys.filterWords)
         }
     }
     
@@ -52,7 +64,6 @@ extension UserDefaults {
         }
         set {
             UserDefaults.group.set(newValue, forKey: Keys.allowOnlyContactList)
-            CXCallDirectoryManager.sharedInstance.reloadExtension(withIdentifier: "marinrados.RoboBlocker.CallDirectoryHandler", completionHandler: nil)
         }
     }
     

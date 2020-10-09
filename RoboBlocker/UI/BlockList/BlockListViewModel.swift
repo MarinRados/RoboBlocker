@@ -10,21 +10,20 @@ import Foundation
 
 final class BlockListViewModel {
     
-    let persistenceService: PersistenceServiceProtocol
+    private var persistenceService: PersistenceServiceProtocol
     init(_ persistenceService: PersistenceServiceProtocol) {
         self.persistenceService = persistenceService
     }
     
     func getContactListStatus() -> Bool {
-        return UserDefaults.group.allowContactsOnly
+        return persistenceService.allowContactsOnly
     }
     
     func setContactListStatus(isOn: Bool) {
-        UserDefaults.group.allowContactsOnly = isOn
+        persistenceService.allowContactsOnly = isOn
     }
     
     func saveContacts(_ contacts: [String]) {
         persistenceService.saveContacts(contacts)
-        print(UserDefaults.group.contacts)
     }
 }

@@ -13,7 +13,7 @@ final class GuardCoordinator: Coordinator {
     @discardableResult
     func start() -> UIViewController {
         let vc = GuardViewController()
-        let vm = GuardViewModel()
+        let vm = GuardViewModel(ServiceFactory.persistenceService)
         vc.viewModel = vm
         return vc
     }

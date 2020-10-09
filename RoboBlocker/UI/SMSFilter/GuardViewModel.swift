@@ -10,11 +10,16 @@ import Foundation
 
 final class GuardViewModel {
     
+    private var persistenceService: PersistenceServiceProtocol
+    init(_ persistenceService: PersistenceServiceProtocol) {
+        self.persistenceService = persistenceService
+    }
+    
     func getGuardStatus() -> Bool {
-        return UserDefaults.group.isGuardOn
+        return persistenceService.isGuardOn
     }
     
     func setGuardStatus(isOn: Bool) {
-        UserDefaults.group.isGuardOn = isOn
+        persistenceService.isGuardOn = isOn
     }
 }

@@ -29,7 +29,9 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         //
         // Numbers must be provided in numerically ascending order.
         
-        let allPhoneNumbers: [CXCallDirectoryPhoneNumber] = [38598223154, 385981686988]//[1_253_950_1212]
+        let blockList = UserDefaults.group.blockList
+        let numbers = blockList.compactMap { Int64($0) }
+        let allPhoneNumbers: [CXCallDirectoryPhoneNumber] = numbers
         for phoneNumber in allPhoneNumbers {
             context.addBlockingEntry(withNextSequentialPhoneNumber: phoneNumber)
         }
@@ -56,8 +58,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
         //
         // Numbers must be provided in numerically ascending order.
-        let allPhoneNumbers: [CXCallDirectoryPhoneNumber] = [1_425_950_1212]
-        //let allPhoneNumbers: [CXCallDirectoryPhoneNumber] = [38598223154]
+        let allPhoneNumbers: [CXCallDirectoryPhoneNumber] = [14259501212]
         let labels = ["Suspicious Call"]
 
         for (phoneNumber, label) in zip(allPhoneNumbers, labels) {

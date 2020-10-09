@@ -11,39 +11,68 @@ import Foundation
 final class PersistenceService: PersistenceServiceProtocol {
     
     let userDefaults = UserDefaults.standard
+    private let groupDefaults = UserDefaults.group
+    
+    // MARK: - User Options
+    
+    var isGuardOn: Bool {
+        get {
+            return groupDefaults.isGuardOn
+        }
+        set {
+            groupDefaults.isGuardOn = newValue
+        }
+    }
+    
+    var allowContactsOnly: Bool {
+        get {
+            return groupDefaults.allowContactsOnly
+        }
+        set {
+            groupDefaults.allowContactsOnly = newValue
+        }
+    }
     
     // MARK: - Get
     
     func getNumbers() -> [String] {
-        return []
+        return groupDefaults.blockList
     }
     
     func getWords() -> [String] {
-        return []
+        return groupDefaults.filterWords
     }
     
     // MARK: - Add
     
     func add(number: String) {
-        
+        var list = groupDefaults.blockList
+        list.append(number)
+        groupDefaults.blockList = list
     }
     
     func add(word: String) {
-        
+        var list = groupDefaults.filterWords
+        list.append(word)
+        groupDefaults.filterWords = list
     }
     
     func saveContacts(_ contacts: [String]) {
-        UserDefaults.group.contacts = contacts
+        groupDefaults.contacts = contacts
     }
     
     // MARK: - Delete
     
     func delete(number: String) {
-        
+        var list = groupDefaults.blockList
+        list.removeAll { $0 == number }
+        groupDefaults.blockList = list
     }
     
     func delete(word: String) {
-        
+        var list = groupDefaults.filterWords
+        list.removeAll { $0 == word }
+        groupDefaults.filterWords = list
     }
     
     // MARK: - Keys
