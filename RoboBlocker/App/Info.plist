@@ -65,5 +65,7 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>NSContactsUsageDescription</key>
+	<string>This app need an access to your contacts list if you want to block all calls outside of it.</string>
 </dict>
 </plist>

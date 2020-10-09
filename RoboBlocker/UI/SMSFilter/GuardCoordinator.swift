@@ -13,6 +13,8 @@ final class GuardCoordinator: Coordinator {
     @discardableResult
     func start() -> UIViewController {
         let vc = GuardViewController()
+        let vm = GuardViewModel()
+        vc.viewModel = vm
         return vc
     }
 }

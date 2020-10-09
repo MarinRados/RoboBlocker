@@ -13,6 +13,8 @@ final class BlockListCoordinator: Coordinator {
     @discardableResult
     func start() -> UIViewController {
         let vc = BlockListViewController()
+        let vm = BlockListViewModel(ServiceFactory.persistenceService)
+        vc.viewModel = vm
         return vc
     }
 }

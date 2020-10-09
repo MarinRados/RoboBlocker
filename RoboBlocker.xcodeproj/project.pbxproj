@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B2CB81A2530FAB5009533E8 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CB8192530FAB5009533E8 /* SharedData.swift */; };
+		6B2CB81B2530FAB5009533E8 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CB8192530FAB5009533E8 /* SharedData.swift */; };
+		6B2CB81C2530FAB5009533E8 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CB8192530FAB5009533E8 /* SharedData.swift */; };
+		6B2CB81E2530FB2C009533E8 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CB81D2530FB2C009533E8 /* ServiceFactory.swift */; };
+		6B2CB8222530FD47009533E8 /* GuardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CB8212530FD47009533E8 /* GuardViewModel.swift */; };
+		6B2CB8262530FDDE009533E8 /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CB8252530FDDE009533E8 /* InfoViewModel.swift */; };
+		6B2CB8272530FDDE009533E8 /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CB8252530FDDE009533E8 /* InfoViewModel.swift */; };
+		6B2CB8282530FDDE009533E8 /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CB8252530FDDE009533E8 /* InfoViewModel.swift */; };
+		6B2CB82A2530FEFF009533E8 /* BlockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CB8292530FEFF009533E8 /* BlockListViewModel.swift */; };
 		6BA64034252B16BB001515F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA64033252B16BB001515F9 /* AppDelegate.swift */; };
 		6BA64036252B16BB001515F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA64035252B16BB001515F9 /* SceneDelegate.swift */; };
 		6BA6403D252B16BC001515F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BA6403C252B16BC001515F9 /* Assets.xcassets */; };
@@ -85,6 +94,11 @@
 		6B2CB80F252F7FF7009533E8 /* RoboBlocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RoboBlocker.entitlements; sourceTree = "<group>"; };
 		6B2CB810252F8025009533E8 /* CallDirectoryHandler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CallDirectoryHandler.entitlements; sourceTree = "<group>"; };
 		6B2CB811252F804C009533E8 /* MessageFilterExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MessageFilterExtension.entitlements; sourceTree = "<group>"; };
+		6B2CB8192530FAB5009533E8 /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
+		6B2CB81D2530FB2C009533E8 /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
+		6B2CB8212530FD47009533E8 /* GuardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardViewModel.swift; sourceTree = "<group>"; };
+		6B2CB8252530FDDE009533E8 /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
+		6B2CB8292530FEFF009533E8 /* BlockListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListViewModel.swift; sourceTree = "<group>"; };
 		6BA64030252B16BB001515F9 /* RoboBlocker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoboBlocker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BA64033252B16BB001515F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BA64035252B16BB001515F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -257,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				6BA64077252DC931001515F9 /* InfoViewController.swift */,
+				6B2CB8252530FDDE009533E8 /* InfoViewModel.swift */,
 				6BA6407D252DCA04001515F9 /* InfoCoordinator.swift */,
 			);
 			path = Info;
@@ -267,6 +282,7 @@
 			children = (
 				6BA6408B252DE700001515F9 /* Cells */,
 				6BA64079252DC946001515F9 /* BlockListViewController.swift */,
+				6B2CB8292530FEFF009533E8 /* BlockListViewModel.swift */,
 				6BA6407F252DCAF4001515F9 /* BlockListCoordinator.swift */,
 			);
 			path = BlockList;
@@ -276,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				6BA6407B252DC95B001515F9 /* GuardViewController.swift */,
+				6B2CB8212530FD47009533E8 /* GuardViewModel.swift */,
 				6BA64081252DCB10001515F9 /* GuardCoordinator.swift */,
 			);
 			path = SMSFilter;
@@ -347,8 +364,10 @@
 		6BA640B6252F4D9C001515F9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6B2CB81D2530FB2C009533E8 /* ServiceFactory.swift */,
 				6BA640B7252F4E06001515F9 /* PersistenceServiceProtocol.swift */,
 				6BA640B9252F4E52001515F9 /* PersistenceService.swift */,
+				6B2CB8192530FAB5009533E8 /* SharedData.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -642,8 +661,11 @@
 				6BA6405F252DB5A7001515F9 /* Coordinator.swift in Sources */,
 				6BA6407E252DCA04001515F9 /* InfoCoordinator.swift in Sources */,
 				6BA64078252DC931001515F9 /* InfoViewController.swift in Sources */,
+				6B2CB82A2530FEFF009533E8 /* BlockListViewModel.swift in Sources */,
 				6BA64068252DB72E001515F9 /* Colors.swift in Sources */,
+				6B2CB8262530FDDE009533E8 /* InfoViewModel.swift in Sources */,
 				6BA6408D252DE71B001515F9 /* BlockedNumberTableViewCell.swift in Sources */,
+				6B2CB8222530FD47009533E8 /* GuardViewModel.swift in Sources */,
 				6BA640B8252F4E06001515F9 /* PersistenceServiceProtocol.swift in Sources */,
 				6BA640BA252F4E52001515F9 /* PersistenceService.swift in Sources */,
 				6BA64086252DCCA1001515F9 /* UIViewController+Extensions.swift in Sources */,
@@ -653,9 +675,11 @@
 				6BA64076252DC804001515F9 /* UITabBarItem+Extensions.swift in Sources */,
 				6BA6408A252DD59F001515F9 /* LabelStyles.swift in Sources */,
 				6BA64084252DCB28001515F9 /* MainCoordinator.swift in Sources */,
+				6B2CB81E2530FB2C009533E8 /* ServiceFactory.swift in Sources */,
 				6BA64080252DCAF4001515F9 /* BlockListCoordinator.swift in Sources */,
 				6BA64064252DB673001515F9 /* String+Extensions.swift in Sources */,
 				6BA6407C252DC95B001515F9 /* GuardViewController.swift in Sources */,
+				6B2CB81A2530FAB5009533E8 /* SharedData.swift in Sources */,
 				6BA6406C252DB894001515F9 /* Fonts.swift in Sources */,
 				6BA6407A252DC946001515F9 /* BlockListViewController.swift in Sources */,
 				6BA64036252B16BB001515F9 /* SceneDelegate.swift in Sources */,
@@ -674,7 +698,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B2CB81B2530FAB5009533E8 /* SharedData.swift in Sources */,
 				6BA6409E252F0FD3001515F9 /* CallDirectoryHandler.swift in Sources */,
+				6B2CB8272530FDDE009533E8 /* InfoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,7 +708,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B2CB81C2530FAB5009533E8 /* SharedData.swift in Sources */,
 				6BA640AE252F4326001515F9 /* MessageFilterExtension.swift in Sources */,
+				6B2CB8282530FDDE009533E8 /* InfoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,8 @@ import CallKit
 
 final class InfoViewController: UIViewController {
 
+    var viewModel: InfoViewModel!
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -18,7 +20,6 @@ final class InfoViewController: UIViewController {
         view.backgroundColor = .white
         setupConstraints()
         CXCallDirectoryManager.sharedInstance.reloadExtension(withIdentifier: "marinrados.RoboBlocker.CallDirectoryHandler", completionHandler: nil)
-        
     }
     
     // MARK: - Constraints

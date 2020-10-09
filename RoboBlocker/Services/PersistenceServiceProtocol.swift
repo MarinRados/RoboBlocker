@@ -10,10 +10,9 @@ import Foundation
 
 protocol PersistenceServiceProtocol {
     
-    var allowContactsOnly: Bool { get set }
-    var isGuardOn: Bool { get set }
     func add(number: String)
     func add(word: String)
+    func saveContacts(_ contacts: [String])
     func delete(number: String)
     func delete(word: String)
     func getNumbers() -> [String]

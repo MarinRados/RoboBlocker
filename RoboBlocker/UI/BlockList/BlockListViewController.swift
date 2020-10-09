@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Contacts
 
 final class BlockListViewController: UIViewController {
+    
+    var viewModel: BlockListViewModel!
+    private let contactStore = CNContactStore()
     
     // MARK: - Lifecycle
     
@@ -17,6 +21,48 @@ final class BlockListViewController: UIViewController {
         view.backgroundColor = .white
         setupConstraints()
         addDoneButton()
+        blockAllSwitch.setOn(viewModel.getContactListStatus(), animated: false)
+        getContactListAuthorization()
+    }
+    
+    // MARK: - Contacts
+    
+    private func getContactListAuthorization() {
+        // Getting contacts from contact list to create a whitelist. Whitelist is not supported in CallDirectoryHandler.
+        // This code should be removed but I left it as a showcase how to fetch the contact list.
+        let authorizationStatus = CNContactStore.authorizationStatus(for: .contacts)
+        switch authorizationStatus {
+        case .authorized:
+            getContacts()
+        case .notDetermined:
+            contactStore.requestAccess(for: .contacts) { [weak self] granted, error in
+                if error != nil {
+                    print(String(describing: error))
+                }
+                if granted {
+                    self?.getContacts()
+                }
+            }
+        default:
+            break
+        }
+    }
+    
+    private func getContacts() {
+        blockAllSwitch.isEnabled = true
+        let request = CNContactFetchRequest(keysToFetch: [CNContactPhoneNumbersKey as CNKeyDescriptor])
+        var contactList: [String] = []
+        do {
+            try contactStore.enumerateContacts(with: request) { [weak self] contacts, _ in
+                for phone in contacts.phoneNumbers {
+                    let number = phone.value.stringValue.trimmingCharacters(in: .whitespacesAndNewlines).trimmingCharacters(in: .symbols)
+                    contactList.append(number)
+                }
+                self?.viewModel.saveContacts(contactList)
+            }
+        } catch {
+            print(error)
+        }
     }
     
     // MARK: - Constraints
@@ -36,11 +82,7 @@ final class BlockListViewController: UIViewController {
     // MARK: - User Interaction
     
     @objc private func switchValueDidChange(_ sender: UISwitch) {
-        if sender.isOn {
-            // future logic here
-        } else {
-            // future logic here
-        }
+        viewModel.setContactListStatus(isOn: sender.isOn)
     }
     
     @objc private func addTapped() {
@@ -77,6 +119,7 @@ final class BlockListViewController: UIViewController {
         blockAllSwitch.onTintColor = .main
         blockAllSwitch.backgroundColor = .white
         blockAllSwitch.setOn(false, animated: false)
+        blockAllSwitch.isEnabled = false
         blockAllSwitch.addTarget(self, action: #selector(switchValueDidChange), for: .valueChanged)
         view.addSubview(blockAllSwitch)
         return blockAllSwitch

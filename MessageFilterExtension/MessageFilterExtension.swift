@@ -20,7 +20,9 @@ extension MessageFilterExtension: ILMessageFilterQueryHandling {
     }
 
     private func offlineAction(for queryRequest: ILMessageFilterQueryRequest) -> ILMessageFilterAction {
-        
+        if !UserDefaults.group.isGuardOn {
+            return .allow
+        }
         guard let messageBody = queryRequest.messageBody?.lowercased() else { return .none}
         let filterWords = ["free", "won"]
         

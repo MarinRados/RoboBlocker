@@ -10,6 +10,8 @@ import UIKit
 
 final class GuardViewController: UIViewController {
     
+    var viewModel: GuardViewModel!
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -17,17 +19,18 @@ final class GuardViewController: UIViewController {
         view.backgroundColor = .white
         setupConstraints()
         addDoneButton()
+        guardSwitch.setOn(viewModel.getGuardStatus(), animated: false)
     }
     
     // MARK: - Constraints
     
     private func setupConstraints() {
-        blockAllSwitch.anchor(trailing: (view.trailingAnchor, 24))
-        allowOnlyContactsLabel.anchor(top: (view.safeAreaLayoutGuide.topAnchor, 30), leading: (view.leadingAnchor, 24), trailing: (blockAllSwitch.leadingAnchor, 24))
-        blockAllSwitch.centerYAnchor.constraint(equalTo: allowOnlyContactsLabel.centerYAnchor).isActive = true
-        blockListTitleLabel.anchor(top: (allowOnlyContactsLabel.bottomAnchor, 16), leading: (view.leadingAnchor, 24))
+        guardSwitch.anchor(trailing: (view.trailingAnchor, 24))
+        guardStatusLabel.anchor(top: (view.safeAreaLayoutGuide.topAnchor, 30), leading: (view.leadingAnchor, 24), trailing: (guardSwitch.leadingAnchor, 24))
+        guardSwitch.centerYAnchor.constraint(equalTo: guardStatusLabel.centerYAnchor).isActive = true
+        filterListTitleLabel.anchor(top: (guardStatusLabel.bottomAnchor, 16), leading: (view.leadingAnchor, 24))
         addButton.anchor(trailing: (view.trailingAnchor, 20), size: CGSize(width: 40, height: 40))
-        textField.anchor(top: (blockListTitleLabel.bottomAnchor, 16), leading: (view.leadingAnchor, 24), trailing: (addButton.leadingAnchor, 12), size: CGSize(width: 0, height: 40))
+        textField.anchor(top: (filterListTitleLabel.bottomAnchor, 16), leading: (view.leadingAnchor, 24), trailing: (addButton.leadingAnchor, 12), size: CGSize(width: 0, height: 40))
         addButton.centerYAnchor.constraint(equalTo: textField.centerYAnchor).isActive = true
         tableView.anchor(top: (textField.bottomAnchor, 20), bottom: (view.safeAreaLayoutGuide.bottomAnchor, 0), leading: (view.leadingAnchor, 0), trailing: (view.trailingAnchor, 0))
         topSeparator.anchor(bottom: (tableView.topAnchor, 0), leading: (view.leadingAnchor, 0), trailing: (view.trailingAnchor, 0), size: CGSize(width: 0, height: 0.5))
@@ -36,11 +39,7 @@ final class GuardViewController: UIViewController {
     // MARK: - User Interaction
     
     @objc private func switchValueDidChange(_ sender: UISwitch) {
-        if sender.isOn {
-            // future logic here
-        } else {
-            // future logic here
-        }
+        viewModel.setGuardStatus(isOn: sender.isOn)
     }
     
     @objc private func addTapped() {
@@ -57,31 +56,31 @@ final class GuardViewController: UIViewController {
     
     // MARK: - UI Components
     
-    private lazy var allowOnlyContactsLabel: UILabel = {
-        let allowOnlyContactsLabel = UILabel()
-        allowOnlyContactsLabel.numberOfLines = 0
-        UILabelStyle.regularText.apply(to: allowOnlyContactsLabel)
-        allowOnlyContactsLabel.text = "Turn on SMS filter protection"
-        view.addSubview(allowOnlyContactsLabel)
-        return allowOnlyContactsLabel
+    private lazy var guardStatusLabel: UILabel = {
+        let guardStatusLabel = UILabel()
+        guardStatusLabel.numberOfLines = 0
+        UILabelStyle.regularText.apply(to: guardStatusLabel)
+        guardStatusLabel.text = "Turn on SMS filter protection"
+        view.addSubview(guardStatusLabel)
+        return guardStatusLabel
     }()
     
-    private lazy var blockAllSwitch: UISwitch = {
-        let blockAllSwitch = UISwitch()
-        blockAllSwitch.onTintColor = .main
-        blockAllSwitch.backgroundColor = .white
-        blockAllSwitch.setOn(false, animated: false)
-        blockAllSwitch.addTarget(self, action: #selector(switchValueDidChange), for: .valueChanged)
-        view.addSubview(blockAllSwitch)
-        return blockAllSwitch
+    private lazy var guardSwitch: UISwitch = {
+        let guardSwitch = UISwitch()
+        guardSwitch.onTintColor = .main
+        guardSwitch.backgroundColor = .white
+        guardSwitch.setOn(false, animated: false)
+        guardSwitch.addTarget(self, action: #selector(switchValueDidChange), for: .valueChanged)
+        view.addSubview(guardSwitch)
+        return guardSwitch
     }()
     
-    private lazy var blockListTitleLabel: UILabel = {
-        let blockListTitleLabel = UILabel()
-        UILabelStyle.bold32Main.apply(to: blockListTitleLabel)
-        blockListTitleLabel.text = "Filter Words"
-        view.addSubview(blockListTitleLabel)
-        return blockListTitleLabel
+    private lazy var filterListTitleLabel: UILabel = {
+        let filterListTitleLabel = UILabel()
+        UILabelStyle.bold32Main.apply(to: filterListTitleLabel)
+        filterListTitleLabel.text = "Filter Words"
+        view.addSubview(filterListTitleLabel)
+        return filterListTitleLabel
     }()
     
     private lazy var addButton: UIButton = {

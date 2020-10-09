@@ -13,6 +13,8 @@ final class InfoCoordinator: Coordinator {
     @discardableResult
     func start() -> UIViewController {
         let vc = InfoViewController()
+        let vm = InfoViewModel()
+        vc.viewModel = vm
         return vc
     }
 }
