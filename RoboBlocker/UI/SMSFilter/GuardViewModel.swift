@@ -37,8 +37,10 @@ final class GuardViewModel {
         onChangedList?()
     }
     
-    func delete(word: String) {
-        persistenceService.delete(word: word)
-        onChangedList?()
+    func delete(index: Int) {
+        if let word = filteredWords[safe: index] {
+            persistenceService.delete(word: word)
+            onChangedList?()
+        }
     }
 }

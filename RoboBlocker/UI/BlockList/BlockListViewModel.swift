@@ -41,8 +41,10 @@ final class BlockListViewModel {
         onChangedList?()
     }
     
-    func delete(number: String) {
-        persistenceService.delete(number: number)
-        onChangedList?()
+    func delete(index: Int) {
+        if let number = blockList[safe: index] {
+            persistenceService.delete(number: number)
+            onChangedList?()
+        }
     }
 }

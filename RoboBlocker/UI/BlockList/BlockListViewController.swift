@@ -90,6 +90,7 @@ final class BlockListViewController: UIViewController {
     }
     
     @objc private func addTapped() {
+        textField.resignFirstResponder()
         guard let input = textField.text else {
             showAlert(title: "Please enter the number you wish to add to your block list.", message: nil, actions: [UIAlertAction(title: "OK", style: .default, handler: nil)])
             return
@@ -221,6 +222,16 @@ extension BlockListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 56
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action =  UIContextualAction(style: .normal, title: "Delete", handler: { [weak self] (_, _, completionHandler ) in
+            self?.viewModel.delete(index: indexPath.row)
+            completionHandler(true)
+        })
+        action.backgroundColor = .red
+        let configuration = UISwipeActionsConfiguration(actions: [action])
+        return configuration
     }
 }
 
