@@ -105,6 +105,7 @@ final class BlockListViewController: UIViewController {
             showAlert(title: "Please enter the whole phone number", message: nil, actions: [UIAlertAction(title: "OK", style: .default, handler: nil)])
             return
         }
+        textField.text = ""
         viewModel.addToBlockList(number: input)
     }
     

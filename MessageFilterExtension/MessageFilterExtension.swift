@@ -24,7 +24,7 @@ extension MessageFilterExtension: ILMessageFilterQueryHandling {
             return .allow
         }
         guard let messageBody = queryRequest.messageBody?.lowercased() else { return .none}
-        let filterWords = ["free", "won"]
+        let filterWords = UserDefaults.group.filterWords
         
         for word in filterWords {
             if messageBody.contains(word) {

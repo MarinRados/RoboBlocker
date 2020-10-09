@@ -56,6 +56,7 @@ final class GuardViewController: UIViewController {
             showAlert(title: "Please enter the word you wish to add to your filters", message: nil, actions: [UIAlertAction(title: "OK", style: .default, handler: nil)])
             return
         }
+        textField.text = ""
         viewModel.addToFilter(word: input.lowercased())
     }
     

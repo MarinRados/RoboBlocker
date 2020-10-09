@@ -64,7 +64,7 @@ final class InfoViewController: UIViewController {
     private lazy var suspiciousCallsValueLabel: UILabel = {
         let suspiciousCallsValueLabel = UILabel()
         UILabelStyle.bold32Main.apply(to: suspiciousCallsValueLabel)
-        suspiciousCallsValueLabel.text = "0"
+        suspiciousCallsValueLabel.text = "19"
         view.addSubview(suspiciousCallsValueLabel)
         return suspiciousCallsValueLabel
     }()
@@ -81,7 +81,7 @@ final class InfoViewController: UIViewController {
     private lazy var blockedSMSValueLabel: UILabel = {
         let blockedSMSValueLabel = UILabel()
         UILabelStyle.bold32Main.apply(to: blockedSMSValueLabel)
-        blockedSMSValueLabel.text = "6"
+        blockedSMSValueLabel.text = "24"
         view.addSubview(blockedSMSValueLabel)
         return blockedSMSValueLabel
     }()
