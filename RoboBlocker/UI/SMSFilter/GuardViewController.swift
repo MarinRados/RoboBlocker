@@ -38,6 +38,8 @@ final class GuardViewController: UIViewController {
         addButton.centerYAnchor.constraint(equalTo: textField.centerYAnchor).isActive = true
         tableView.anchor(top: (textField.bottomAnchor, 20), bottom: (view.safeAreaLayoutGuide.bottomAnchor, 0), leading: (view.leadingAnchor, 0), trailing: (view.trailingAnchor, 0))
         topSeparator.anchor(bottom: (tableView.topAnchor, 0), leading: (view.leadingAnchor, 0), trailing: (view.trailingAnchor, 0), size: CGSize(width: 0, height: 0.5))
+        emptyStateLabel.anchor(leading: (view.leadingAnchor, 32), trailing: (view.trailingAnchor, 32))
+        emptyStateLabel.centerYAnchor.constraint(equalTo: tableView.centerYAnchor).isActive = true
     }
     
     // MARK: - User Interaction
@@ -141,6 +143,16 @@ final class GuardViewController: UIViewController {
         return topSeparator
     }()
     
+    private lazy var emptyStateLabel: UILabel = {
+        let emptyStateLabel = UILabel()
+        emptyStateLabel.numberOfLines = 0
+        UILabelStyle.regular20MainCenter.apply(to: emptyStateLabel)
+        emptyStateLabel.text = "Your filter list is currently empty"
+        emptyStateLabel.isHidden = true
+        view.addSubview(emptyStateLabel)
+        return emptyStateLabel
+    }()
+    
     // MARK: - Utility
     
     private func addDoneButton() {
@@ -160,6 +172,7 @@ final class GuardViewController: UIViewController {
 extension GuardViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        emptyStateLabel.isHidden = viewModel.filteredWords.count > 0
         return viewModel.filteredWords.count
     }
     

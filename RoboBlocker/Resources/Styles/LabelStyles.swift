@@ -34,4 +34,10 @@ enum UILabelStyle {
         label.font = Font.regular(size: 17)
         label.textColor = .dark
     }
+    
+    static let regular20MainCenter = base.composing { label in
+        label.font = Font.regular(size: 20)
+        label.textColor = .main
+        label.textAlignment = .center
+    }
 }
