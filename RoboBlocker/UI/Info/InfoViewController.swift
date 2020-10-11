@@ -10,8 +10,6 @@ import UIKit
 import CallKit
 
 final class InfoViewController: UIViewController {
-
-    var viewModel: InfoViewModel!
     
     // MARK: - Lifecycle
     
