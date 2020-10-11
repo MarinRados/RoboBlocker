@@ -17,6 +17,7 @@
 		6B2CB82F25311D39009533E8 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CB82E25311D39009533E8 /* Array+Extensions.swift */; };
 		6B2CB8312533641B009533E8 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CB8302533641B009533E8 /* XCTestCase+Extensions.swift */; };
 		6B2CB8332533643D009533E8 /* PersistenceServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CB8322533643D009533E8 /* PersistenceServiceMock.swift */; };
+		6B2CB8352533690E009533E8 /* GuardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2CB8342533690E009533E8 /* GuardViewModelTests.swift */; };
 		6BA64034252B16BB001515F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA64033252B16BB001515F9 /* AppDelegate.swift */; };
 		6BA64036252B16BB001515F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA64035252B16BB001515F9 /* SceneDelegate.swift */; };
 		6BA6403D252B16BC001515F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BA6403C252B16BC001515F9 /* Assets.xcassets */; };
@@ -103,6 +104,7 @@
 		6B2CB82E25311D39009533E8 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		6B2CB8302533641B009533E8 /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		6B2CB8322533643D009533E8 /* PersistenceServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceServiceMock.swift; sourceTree = "<group>"; };
+		6B2CB8342533690E009533E8 /* GuardViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardViewModelTests.swift; sourceTree = "<group>"; };
 		6BA64030252B16BB001515F9 /* RoboBlocker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoboBlocker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BA64033252B16BB001515F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BA64035252B16BB001515F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -228,10 +230,11 @@
 		6BA64049252B16BC001515F9 /* RoboBlockerTests */ = {
 			isa = PBXGroup;
 			children = (
-				6BA6404A252B16BC001515F9 /* BlockListViewModelTests.swift */,
 				6BA6404C252B16BC001515F9 /* Info.plist */,
 				6B2CB8302533641B009533E8 /* XCTestCase+Extensions.swift */,
 				6B2CB8322533643D009533E8 /* PersistenceServiceMock.swift */,
+				6BA6404A252B16BC001515F9 /* BlockListViewModelTests.swift */,
+				6B2CB8342533690E009533E8 /* GuardViewModelTests.swift */,
 			);
 			path = RoboBlockerTests;
 			sourceTree = "<group>";
@@ -708,6 +711,7 @@
 			files = (
 				6B2CB8312533641B009533E8 /* XCTestCase+Extensions.swift in Sources */,
 				6B2CB8332533643D009533E8 /* PersistenceServiceMock.swift in Sources */,
+				6B2CB8352533690E009533E8 /* GuardViewModelTests.swift in Sources */,
 				6BA6404B252B16BC001515F9 /* BlockListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
