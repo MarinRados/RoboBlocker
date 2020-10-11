@@ -1,4 +1,5 @@
 # RoboBlocker
+
 An iOS application that processes incoming phone calls and messages.
 
 ## Extensions
@@ -10,81 +11,48 @@ This app uses two extensions to process incoming calls and messages: CallDirecto
 To enable RoboBlocker incoming call blocking a user has to go to Settings -> Phone -> Call Blocking & Identification -> Enable RoboBlocker.
 Once that option is enabled the extension will:
 
-1. Block all incoming calls from numbers in the block list found in the app
+1. Block all incoming calls from numbers in the block list found in the app, number 253-950-1212 is added by default
 2. Mark number 425-950-1212 as a suspicious call
-3. Let all other number through
+3. Let all other numbers through
 
 ### MessageFilterExtension
 
-To enable RoboBlocker incoming call blocking a user has to go to Settings -> Messages -> Unknown & Spam (Message Filtering) -> Enable RoboBlocker.
-Once that option is enabled the extension will filter all the SMS messages received by the filter words found in the filter word list in the app. Those messages will go to a "SMS Junk" folder in your messages.
+To enable RoboBlocker incoming call blocking a user has to go to Settings -> Messages -> Unknown & Spam (Message Filtering) -> Enable RoboBlocker. Also, SMS guard switch has to be turned on in the app.
+Once that option is enabled the extension will filter all the SMS messages received by the filter words found in the filter word list in the app and by numbers in your block list. 
+Those messages will go to a "SMS Junk" folder in your messages.
 Please note that this extension only filters and does not block incoming messages.
+Default filter words are "free" and "won".
+
+## Screens
+
+### Info screen
+
+Info screen contains mocked count of blocked calls, suspicious calls and filtered messages.
+
+### Block List screen
+
+This screen contains a switch which allows users to turn on blocking of the calls for all numbers except for the contact list (not implemented, for more info please see below).
+Also contains a list of numbers added to the block list and an input field to add additional numbers. Delete option is also enabled in the list.
+
+### SMS Guard screen
+
+SMS Guard screen contains a switch which allows users to turn on SMS message filter.
+Also contains a list of words added to the filter list and an input field to add additional words. Delete option is also enabled in the list.
+
+## Block all numbers except the contact list
+
+Since CallDirectoryHandler does not have an option of creating a whitelist of contacts and only takes the block list, this option is not completely implemented. The option is prepared both on UI end with a switch on the Block List screen and fetching the contacts from the user's contact list in case the permission is given.
 
 ## Architecture
 
-There is no "best" architecture, only best for specific projects. For really small projects it's ok to use MVC, for larger one MVVM and for really large VIPER, but I choose MVVM+C because it offers application to be scalable, maintainable and testable. Its powerful but easy to use. 
+Although MVC is usually recommended for smaller apps the MVVM is used to make the app easy to test, maintain and scale at later updates. Use of the coordinators makes the architecture MVVM+C to also add better dependency injection and easier navigation. 
 
-## Important part of the application
-*Please note: they are not arranged in importance order*
+## Data storage and sharing
 
-### MainCoordinator
-Holds UITabBarController and is responsible for main navigation throught application.
+Data that is used between the app and extensions is saved locally in the UserDefaults storage. An App Group entitlement is created that shares the data between the containing app and extension targets. 
+This is necessary because [extensions](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/ExtensionOverview.html#//apple_ref/doc/uid/TP40014214-CH2-SW2) are not apps and are separate processes in the system. SharedData file contains the shared UserDefaults logic. 
+To see more about App Groups refer to [official documentation](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_security_application-groups) .
 
-### StorageProviderProtocol
-This protocol enables us to test storage and if we want to change storage provider (like Realm, CoreData) in some point of time we just need to conform it to. At this point, I used UserDefaults storage because models are not complete and big.
+## Tests
 
-### Info
-This screen show information that is currently hardcoded, but the general idea is to be fetched from some service. It is done with way how I usually work. With ViewController, StoryBoard and ViewModel as part of one screen.
-
-### SMSBlocking
-This screen is made programmatically without a storyboard, just to show you that I am not dependent on storyboards. Also feature nice CoreAnimations.
-
-### BlockList
-This screen probably looks familiar because I made it to look like RoboKiller block list screen. It is also made with storyboard with custom UiTableViewCells that are defined in separate XIB's . User need to add number with country code for example in Croatia is 38599123123 (from 099123123).
-
-### Localizable
-Helper enum for managing translations. Also, this app default language is English, but it's also localized to Croatian (Nikola can confirm :D)
-
-
-### Styling
-
-Helper structure for making, managing and simpler using of styles in the application. Example:
-
-defining new style:
-```swift
-static let bigTitle = base.composing { label in
-        label.textColor = UIColor.black
-        label.font = Font.medium(size: 32)
-        label.textAlignment = .left
-    }
-```
-usage on one label
-```swift
- UILabelStyle.bigTitle.apply(to: infoBigTitleLabel)
-```
-
-or multiple
-```swift
- UILabelStyle.mediumGray.apply(to: spammersOnListLabel, myBlockedCallsLabel)
-```     
-### CallDirectoryHandler
-This is CallDirectoryExtension for call blocking/identification. More informatios are available in [official documentation](https://developer.apple.com/documentation/callkit).
-
-### MessageFillterExtension
-
-This extension allow us to identify and handle incoming messages. [More information](https://developer.apple.com/documentation/sms_and_call_reporting/sms_and_mms_message_filtering/creating_a_message_filter_app_extension)
-Currently blocked words are:
-* lottery
-* you won
-* prince
-
-Also, keep in mind, blocked numbers for calls also block SMS from that number.
-
-### SharedStorage
-
-Extension on UserDefaults that with support of GroupID's enable us to share data between main app and extensions, because extension are separate process in system.
-
-
-### Tests
-
-This project have UI and Unit test cases where most complex viewModel (BlockListViewModel) was tested with some utility methods.
+Both BlockListViewModel and GuardViewModel are covered by unit tests. GuardViewModel coverage is 100%, while BlockListViewModel is covered 80% because the contacts implementation is not complete.
