@@ -895,7 +895,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = marinrados.RoboBlocker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marinrados.RoboBlocker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -917,7 +917,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = marinrados.RoboBlocker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marinrados.RoboBlocker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -984,7 +984,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = marinrados.RoboBlocker.CallDirectoryHandler;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marinrados.RoboBlocker.CallDirectoryHandler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -1006,7 +1006,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = marinrados.RoboBlocker.CallDirectoryHandler;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marinrados.RoboBlocker.CallDirectoryHandler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -1026,7 +1026,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = marinrados.RoboBlocker.MessageFilterExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marinrados.RoboBlocker.MessageFilterExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -1046,7 +1046,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = marinrados.RoboBlocker.MessageFilterExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marinrados.RoboBlocker.MessageFilterExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;

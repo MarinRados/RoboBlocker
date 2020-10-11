@@ -20,6 +20,8 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSContactsUsageDescription</key>
+	<string>This app need an access to your contacts list if you want to block all calls outside of it.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>NotoSans-Bold.ttf</string>
@@ -65,7 +67,5 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
-	<key>NSContactsUsageDescription</key>
-	<string>This app need an access to your contacts list if you want to block all calls outside of it.</string>
 </dict>
 </plist>

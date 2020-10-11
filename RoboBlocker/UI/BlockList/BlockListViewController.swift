@@ -8,7 +8,6 @@
 
 import UIKit
 import Contacts
-import CallKit
 
 final class BlockListViewController: UIViewController {
     

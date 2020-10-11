@@ -18,7 +18,7 @@ Once that option is enabled the extension will:
 
 To enable RoboBlocker incoming call blocking a user has to go to Settings -> Messages -> Unknown & Spam (Message Filtering) -> Enable RoboBlocker.
 Once that option is enabled the extension will filter all the SMS messages received by the filter words found in the filter word list in the app. Those messages will go to a "SMS Junk" folder in your messages.
-Please not that this extension only filters and does not block incoming messages
+Please note that this extension only filters and does not block incoming messages.
 
 ## Architecture
 

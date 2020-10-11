@@ -17,7 +17,7 @@ final class InfoViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupConstraints()
-        CXCallDirectoryManager.sharedInstance.reloadExtension(withIdentifier: "marinrados.RoboBlocker.CallDirectoryHandler", completionHandler: nil)
+        CXCallDirectoryManager.sharedInstance.reloadExtension(withIdentifier: "com.marinrados.RoboBlocker.CallDirectoryHandler", completionHandler: nil)
     }
     
     // MARK: - Constraints

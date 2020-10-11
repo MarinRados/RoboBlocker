@@ -10,7 +10,7 @@ import CallKit
 import Foundation
 
 extension UserDefaults {
-    static let suiteName = "group.mrados.RoboBlocker.sharedData"
+    static let suiteName = "group.com.marinrados.RoboBlocker.sharedData"
     static let group = UserDefaults(suiteName: suiteName)!
     
     private enum Keys {
@@ -30,7 +30,7 @@ extension UserDefaults {
         }
         set {
             UserDefaults.group.setValue(newValue, forKeyPath: Keys.blockList)
-            CXCallDirectoryManager.sharedInstance.reloadExtension(withIdentifier: "marinrados.RoboBlocker.CallDirectoryHandler", completionHandler: nil)
+            CXCallDirectoryManager.sharedInstance.reloadExtension(withIdentifier: "com.marinrados.RoboBlocker.CallDirectoryHandler", completionHandler: nil)
         }
     }
     

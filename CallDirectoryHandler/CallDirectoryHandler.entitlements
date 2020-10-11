@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.marinrados.RoboBlocker.sharedData</string>
+		<string>group.com.marinrados.RoboBlocker.sharedData</string>
 	</array>
 </dict>
 </plist>
