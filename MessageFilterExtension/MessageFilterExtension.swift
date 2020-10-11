@@ -26,7 +26,7 @@ extension MessageFilterExtension: ILMessageFilterQueryHandling {
         
         let blockList = UserDefaults.group.blockList
         
-        if let number = queryRequest.sender {
+        if let number = queryRequest.sender?.trimmingCharacters(in: .whitespacesAndNewlines).trimmingCharacters(in: .symbols) {
             if blockList.contains(number) {
                 return .filter
             }

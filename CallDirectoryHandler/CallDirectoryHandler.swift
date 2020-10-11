@@ -31,7 +31,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         
         let blockList = UserDefaults.group.blockList
         let numbers = blockList.compactMap { Int64($0) }
-        let allPhoneNumbers: [CXCallDirectoryPhoneNumber] = numbers
+        let allPhoneNumbers: [CXCallDirectoryPhoneNumber] = numbers.sorted()
         for phoneNumber in allPhoneNumbers {
             context.addBlockingEntry(withNextSequentialPhoneNumber: phoneNumber)
         }
