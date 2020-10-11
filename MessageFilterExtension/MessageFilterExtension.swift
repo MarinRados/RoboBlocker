@@ -25,9 +25,9 @@ extension MessageFilterExtension: ILMessageFilterQueryHandling {
         }
         
         let blockList = UserDefaults.group.blockList
-        
+
         if var number = queryRequest.sender {
-            number = number.replacingOccurrences(of: "+", with: "")
+            number = number.trimmingCharacters(in: .whitespacesAndNewlines).trimmingCharacters(in: .symbols)
             if blockList.contains(number) {
                 return .filter
             }
