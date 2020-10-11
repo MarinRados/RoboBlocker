@@ -23,6 +23,15 @@ extension MessageFilterExtension: ILMessageFilterQueryHandling {
         if !UserDefaults.group.isGuardOn {
             return .allow
         }
+        
+        let blockList = UserDefaults.group.blockList
+        
+        if let number = queryRequest.sender {
+            if blockList.contains(number) {
+                return .filter
+            }
+        }
+        
         guard let messageBody = queryRequest.messageBody?.lowercased() else { return .none}
         let filterWords = UserDefaults.group.filterWords
         
