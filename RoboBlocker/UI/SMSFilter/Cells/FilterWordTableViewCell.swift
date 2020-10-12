@@ -30,7 +30,7 @@ final class FilterWordTableViewCell: UITableViewCell {
     private func commonInit() {
         selectionStyle = .none
         wordLabel.centerYInSuperview()
-        wordLabel.anchor(leading: (contentView.leadingAnchor, 24))
+        wordLabel.anchor(leading: (contentView.leadingAnchor, 24), trailing: (contentView.trailingAnchor, 24))
     }
     
     var word: String = "" {
